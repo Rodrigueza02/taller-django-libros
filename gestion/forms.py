@@ -19,3 +19,19 @@ class AutorForm(forms.ModelForm):
         widgets = {
             'biografia': forms.Textarea(attrs={'rows': 4}),
         }
+        
+class LibroForm(forms.ModelForm):
+    fecha_publicacion = forms.DateField(
+        widget=forms.DateInput(attrs={'type': 'date'}),
+        label='Fecha de publicación'
+    )
+
+    class Meta:
+        model = Libro
+        fields = ['titulo', 'fecha_publicacion', 'genero', 'isbn', 'autor']
+        labels = {
+            'titulo': 'Título del libro',
+            'genero': 'Género literario',
+            'isbn': 'Código ISBN',
+            'autor': 'Autor',
+        }
