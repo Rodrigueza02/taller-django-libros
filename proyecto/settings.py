@@ -120,3 +120,10 @@ STATIC_URL = 'static/'
 # Para que Django sirva archivos estáticos en producción
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Heroku
+import os
+
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = ['*']  # Luego lo ajustas con tu URL de Heroku
