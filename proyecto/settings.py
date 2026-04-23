@@ -126,4 +126,4 @@ import os
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']  # Luego lo ajustas con tu URL de Heroku
+ALLOWED_HOSTS = ['*', 'taller-django-libros-ico3.onrender.com']
